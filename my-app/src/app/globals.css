@@ -2,20 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Theme Colors === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #edc26d;
+  --foreground: #1a202c;
+  --primary: #1e40af;
+  --secondary: #475569;
+  --accent: #9333ea;
+  --border: #cbd5e1;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  background-image: url('/background.png'); /* Path to your background image */
+  background-size: cover;                   /* Ensure the image covers the whole page */
+  background-position: center;              /* Center the background image */
+  background-attachment: fixed;             /* Fixed background on scroll */
+  background-repeat: no-repeat;             /* Prevent background repetition */
+  color: #333;                   
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === Utility Classes === */
+.border-theme {
+  border: 0px solid var(--border);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+  color: #fff;
+  background-image: image();
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+.bg-accent {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* === Buttons === */
+button {
+  @apply px-4 py-2 rounded font-medium transition;
+  background-color: var(--primary);
+  color: #fff;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+/* === Links === */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
